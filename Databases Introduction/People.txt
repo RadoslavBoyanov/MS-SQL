@@ -1,0 +1,20 @@
+CREATE TABLE [People](
+[Id] INT PRIMARY KEY IDENTITY,
+[Name] NVARCHAR(200) NOT NULL,
+[Picture] VARBINARY(MAX),
+CHECK (DATALENGTH([Picture]) <= 2000000),
+[Height] DECIMAL(3,2),
+[Weight] DECIMAL(5,2), 
+[Gender] CHAR(1) NOT NULL,
+CHECK ([Gender] = 'm' OR [Gender] = 'f'),
+[Birthdate] DATE NOT NULL, 
+[Biography] NVARCHAR(MAX)
+)
+
+INSERT People ([Name], [Picture], [Height], [Weight], [Gender], [Birthdate], [Biography])
+VALUES
+('Radoslav', NULL, 1.78, 72.1, 'm', '1995-11-30', 'Dev'),
+('Biser', NULL, 1.77, 93.5, 'm', '1992-05-31', 'Teacher'),
+('Vencislav', NULL, 1.80, 90.5, 'm', '1990-12-26', 'Policeman'),
+('Ralica', NULL, 1.68, 50, 'f', '1991-02-26', 'Director'),
+('Yoanna', NULL, 1.75, 70.5, 'f', '2001-03-16', 'Archeologist')

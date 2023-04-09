@@ -1,0 +1,75 @@
+CREATE DATABASE Movies
+
+CREATE TABLE Directors(
+[Id] INT IDENTITY,
+[DirectorName] NVARCHAR(50) NOT NULL,
+[Notes] NVARCHAR(MAX)
+)
+
+CREATE TABLE Genres(
+Id INT IDENTITY,
+GenreName NVARCHAR(50) NOT NULL,
+Notes NVARCHAR(MAX)
+)
+
+CREATE TABLE Categories(
+Id INT IDENTITY,
+CategoryName NVARCHAR(50) NOT NULL,
+Notes NVARCHAR(MAX)
+)
+
+CREATE TABLE Movies(
+Id INT IDENTITY,
+Title NVARCHAR(50),
+DirectorId INT NOT NULL,
+CopyrightYear  INT NOT NULL,
+[Length] FLOAT NOT NULL,
+GenreId INT NOT NULL,
+CatgoryId INT NOT NULL,
+Rating INT NOT NULL, 
+Notes NVARCHAR(MAX)
+)
+
+ALTER TABLE Directors
+ADD CONSTRAINT PK_Id
+PRIMARY KEY (Id)
+
+ALTER TABLE Genres
+ADD CONSTRAINT PK_Genres
+PRIMARY KEY (Id)
+
+ALTER TABLE Categories
+ADD CONSTRAINT PK_Categories
+PRIMARY KEY (Id)
+
+ALTER TABLE Movies
+ADD CONSTRAINT PK_Movies
+PRIMARY KEY (Id)
+
+INSERT INTO Directors(DirectorName,Notes)
+VALUES ('Samuel', 'something'), 
+('Johny','something'),
+('Adam', 'something'),
+('Steph', 'something'),
+('Klay', 'something')
+
+INSERT INTO Genres (GenreName, Notes)
+VALUES ('Comedy', 'hhahahah'),
+('Drama', ' intersting'),
+('Thriller', 'lool'),
+('Action', 'not good not bad'),
+('History', 'important')
+
+INSERT INTO Categories (CategoryName,Notes)
+VALUES ('Country', 'USA/Russia/Great Britain'),
+('Year', 'Before 2000 and After 2000'),
+('Language','English and others one'),
+('Source', 'book .....' ),
+('Creator', 'many persons')
+
+INSERT INTO Movies (Title,DirectorId,CopyrightYear,Length,GenreId,CatgoryId,Rating,Notes)
+VALUES(' King' ,5,1999,78,1,5,10,'great'),
+('War',4,2000,90,2,4,9,'great'),
+('Love',3,1980,100,3,3,5,'bad'),
+('Real story',2,1890,20,4,2,10,'the best'),
+('Bad boys',1,1990,120,5,1,10,'classic')
