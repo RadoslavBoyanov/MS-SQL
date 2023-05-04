@@ -9,3 +9,4 @@ Skills I have acquired:
  - Using the ACID model
 
 ![MS SQL - January 2023 - Certificate02](https://user-images.githubusercontent.com/106109182/230784149-ab3b7f16-1729-48be-a34c-ba94ab30ea6f.jpg)
+![image](https://user-images.githubusercontent.com/106109182/236231508-76865dec-6047-4926-b964-b0e9a64d8520.png)
